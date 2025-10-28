@@ -51,8 +51,11 @@ You can register and get a free API key from OMDb API Key Registration
 # ⚙️ Environment Setup
 
 1. Create and Activate a Virtual Environment
+
 cd D:\Movies_data_pipeline_project
+
 python -m venv venv
+
 venv\Scripts\activate
 
 2. Install Dependencies
