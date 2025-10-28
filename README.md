@@ -11,6 +11,7 @@ Movies_Data_Pipeline_Project/
 ├── etl.py               # Main ETL script (Extract, Transform, Load)
 ├── schema.sql           # SQL script to create database schema
 ├── queries.sql          # Analytical SQL queries
+├── requirements.txt     # Python dependencies
 └── README.md            # Project documentation
 
 #⚙️ Technologies Used
