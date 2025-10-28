@@ -14,23 +14,33 @@ Libraries	        pandas, requests, sqlalchemy
 IDE	              Visual Studio Code
 Extension       	SQLite Viewer (VS Code)
 
-#🧩 Data Sources
+🧩 Data Sources
 🎞 1. Local CSV Files
+
 From the MovieLens Small Dataset:
 👉 https://grouplens.org/datasets/movielens/latest/
 
 Files used:
+
 movies.csv → Contains movie titles and genres
+
 ratings.csv → Contains user ratings for movies
 
 🌐 2. External API (OMDb API)
+
 The OMDb API
  is used to enrich movies with extra details such as:
-Director
-Plot
-Box Office earnings
-You can register and get a free API key from OMDb API Key Registration
 
+Director
+
+Plot
+
+Box Office earnings
+
+IMDb rating
+
+You can register and get a free API key from OMDb API Key Registration
+.
 #⚙️ Environment Setup
 
 1. Create and Activate a Virtual Environment
@@ -39,17 +49,26 @@ python -m venv venv
 venv\Scripts\activate
 
 2. Install Dependencies
+
 Install required libraries using:
+
 pip install -r requirements.txt
+
+
 Typical requirements.txt includes:
+
 pandas
 sqlalchemy
 requests
 
 3. Database Setup
+
 You can use SQLite for simplicity.
 Run the schema setup script in your SQLite environment or directly through VS Code SQLite Viewer:
+
 .read schema.sql
+
+
 This creates the necessary tables for movies, ratings, and additional details.
 
 #🧱 Database Design
@@ -60,29 +79,50 @@ The database has two main tables:
 movies — Stores all movie-related metadata (local + API-enriched).
 ratings — Stores user ratings for each movie.
 
-#🔄 ETL Pipeline Workflow
-The etl.py script performs the entire ETL process:
-1️⃣ Extract
-Reads data from movies.csv and ratings.csv (MovieLens dataset).
-For each movie, fetches additional metadata from the OMDb API using movie title or IMDb ID.
-2️⃣ Transform
-Cleans and preprocesses the data (handles nulls, duplicates, and data types).
-Parses genre strings (splits | into separate genre entries).
-Adds derived fields such as release decade.
-Combines local CSV and API data into enriched datasets.
-3️⃣ Load
-Connects to the SQLite database using SQLAlchemy.
-Loads data into the respective tables defined in schema.sql.
-Ensures idempotency (re-running the script doesn’t duplicate entries).
-▶️ Running the Pipeline
-Once your environment is set up, run:
-python etl.py
-This will:
-Read and clean CSV data.
-Call the OMDb API for enrichment.
-Load all processed data into the SQLite database (movies.db).
-You can verify your database content using the SQLite Viewer extension in VS Code.
+🔄 ETL Pipeline Workflow
 
+The etl.py script performs the entire ETL process:
+
+1️⃣ Extract
+
+Reads data from movies.csv and ratings.csv (MovieLens dataset).
+
+For each movie, fetches additional metadata from the OMDb API using movie title or IMDb ID.
+
+2️⃣ Transform
+
+Cleans and preprocesses the data (handles nulls, duplicates, and data types).
+
+Parses genre strings (splits | into separate genre entries).
+
+Adds derived fields such as release decade.
+
+Combines local CSV and API data into enriched datasets.
+
+3️⃣ Load
+
+Connects to the SQLite database using SQLAlchemy.
+
+Loads data into the respective tables defined in schema.sql.
+
+Ensures idempotency (re-running the script doesn’t duplicate entries).
+
+▶️ Running the Pipeline
+
+Once your environment is set up, run:
+
+python etl.py
+
+
+This will:
+
+Read and clean CSV data.
+
+Call the OMDb API for enrichment.
+
+Load all processed data into the SQLite database (movies.db).
+
+You can verify your database content using the SQLite Viewer extension in VS Code.
 #🧩 Assumptions
 1. **Dataset Structure**  
    - The MovieLens dataset (movies.csv and ratings.csv) is correctly formatted and does not contain corrupted rows.
