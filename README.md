@@ -5,15 +5,6 @@ Local CSV files (MovieLens dataset) – containing basic movie and rating inform
 External API (OMDb API) – providing enriched movie metadata such as Director, Plot, Box Office, and IMDb Rating.
 Once the data is processed, it is stored in a SQLite database and analyzed through SQL queries to extract meaningful insights such as top-rated movies, most popular genres, and director statistics.
 
-# 📁 Project Structure
-Movies_Data_Pipeline_Project/
-│
-├── etl.py               # Main ETL script (Extract, Transform, Load)
-├── schema.sql           # SQL script to create database schema
-├── queries.sql          # Analytical SQL queries
-├── requirements.txt     # Python dependencies
-└── README.md            # Project documentation
-
 #⚙️ Technologies Used
 Component       	Tool / Library
 Language        	Python 3.x
