@@ -1,8 +1,12 @@
 # Movies_data_pipeline
 This project demonstrates an end-to-end data engineering pipeline that extracts, transforms, and loads (ETL) movie data from multiple sources into a relational database for analytical querying.
+
 The pipeline integrates data from:
+
 Local CSV files (MovieLens dataset) – containing basic movie and rating information.
+
 External API (OMDb API) – providing enriched movie metadata such as Director, Plot, Box Office, and IMDb Rating.
+
 Once the data is processed, it is stored in a SQLite database and analyzed through SQL queries to extract meaningful insights such as top-rated movies, most popular genres, and director statistics.
 
 # ⚙️ Technologies used
@@ -50,7 +54,7 @@ You can register and get a free API key from OMDb API Key Registration
 
 # ⚙️ Environment Setup
 
-1. Create and Activate a Virtual Environment
+1. **Create and Activate a Virtual Environment**
 
 cd D:\Movies_data_pipeline_project
 
@@ -58,7 +62,7 @@ python -m venv venv
 
 venv\Scripts\activate
 
-2. Install Dependencies
+2. **Install Dependencies**
 
 Install required libraries using:
 
@@ -71,7 +75,7 @@ pandas
 sqlalchemy
 requests
 
-3. Database Setup
+3. **Database Setup**
 
 You can use SQLite for simplicity.
 Run the schema setup script in your SQLite environment or directly through VS Code SQLite Viewer:
@@ -98,13 +102,13 @@ ratings — Stores user ratings for each movie.
 
 The etl.py script performs the entire ETL process:
 
-1️⃣ Extract
+1. **Extract**
 
 Reads data from movies.csv and ratings.csv (MovieLens dataset).
 
 For each movie, fetches additional metadata from the OMDb API using movie title or IMDb ID.
 
-2️⃣ Transform
+2. **Transform**
 
 Cleans and preprocesses the data (handles nulls, duplicates, and data types).
 
@@ -114,7 +118,7 @@ Adds derived fields such as release decade.
 
 Combines local CSV and API data into enriched datasets.
 
-3️⃣ Load
+3. **Load**
 
 Connects to the SQLite database using SQLAlchemy.
 
