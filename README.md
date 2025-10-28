@@ -6,13 +6,13 @@ External API (OMDb API) – providing enriched movie metadata such as Director, 
 Once the data is processed, it is stored in a SQLite database and analyzed through SQL queries to extract meaningful insights such as top-rated movies, most popular genres, and director statistics.
 
 ⚙️ Technologies Used
-Component       	Tool / Library
-Language        	Python 3.x
-Database        	SQLite
-API             	OMDb API
-Libraries	        pandas, requests, sqlalchemy
-IDE	              Visual Studio Code
-Extension       	SQLite Viewer (VS Code)
+Component -	Tool / Library
+Language -	Python 3.x
+Database	- SQLite
+API - OMDb API
+Libraries -	pandas, requests, sqlalchemy
+IDE -	Visual Studio Code
+Extension -	SQLite Viewer (VS Code)
 
 🧩 Data Sources
 🎞 1. Local CSV Files
@@ -73,10 +73,15 @@ This creates the necessary tables for movies, ratings, and additional details.
 
 🧱 Database Design
 Database Used: SQLite
+
 SQLite is chosen for its simplicity and ease of setup for local projects.
+
 Schema Overview
+
 The database has two main tables:
+
 movies — Stores all movie-related metadata (local + API-enriched).
+
 ratings — Stores user ratings for each movie.
 
 🔄 ETL Pipeline Workflow
