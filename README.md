@@ -8,11 +8,17 @@ Once the data is processed, it is stored in a SQLite database and analyzed throu
 # ⚙️ Technologies used
 
 Component -	Tool / Library
+
 Language -	Python 3.x
+
 Database	- SQLite
+
 API - OMDb API
+
 Libraries -	pandas, requests, sqlalchemy
+
 IDE -	Visual Studio Code
+
 Extension -	SQLite Viewer (VS Code)
 
 # 🧩 Data Sources
