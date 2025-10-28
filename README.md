@@ -5,7 +5,8 @@ Local CSV files (MovieLens dataset) – containing basic movie and rating inform
 External API (OMDb API) – providing enriched movie metadata such as Director, Plot, Box Office, and IMDb Rating.
 Once the data is processed, it is stored in a SQLite database and analyzed through SQL queries to extract meaningful insights such as top-rated movies, most popular genres, and director statistics.
 
-#⚙️ Technologies Used
+# ⚙️ Technologies used
+
 Component -	Tool / Library
 Language -	Python 3.x
 Database	- SQLite
@@ -14,7 +15,7 @@ Libraries -	pandas, requests, sqlalchemy
 IDE -	Visual Studio Code
 Extension -	SQLite Viewer (VS Code)
 
-#🧩 Data Sources
+# 🧩 Data Sources
 🎞 1. Local CSV Files
 
 From the MovieLens Small Dataset:
@@ -40,8 +41,8 @@ Box Office earnings
 IMDb rating
 
 You can register and get a free API key from OMDb API Key Registration
-.
-#⚙️ Environment Setup
+
+# ⚙️ Environment Setup
 
 1. Create and Activate a Virtual Environment
 cd D:\Movies_data_pipeline_project
@@ -71,7 +72,7 @@ Run the schema setup script in your SQLite environment or directly through VS Co
 
 This creates the necessary tables for movies, ratings, and additional details.
 
-#🧱 Database Design
+# 🧱 Database Design
 Database Used: SQLite
 
 SQLite is chosen for its simplicity and ease of setup for local projects.
@@ -84,7 +85,7 @@ movies — Stores all movie-related metadata (local + API-enriched).
 
 ratings — Stores user ratings for each movie.
 
-#🔄 ETL Pipeline Workflow
+# 🔄 ETL Pipeline Workflow
 
 The etl.py script performs the entire ETL process:
 
@@ -129,7 +130,7 @@ Load all processed data into the SQLite database (movies.db).
 
 You can verify your database content using the SQLite Viewer extension in VS Code.
 
-#🧩 Assumptions
+# 🧩 Assumptions
 1. **Dataset Structure**  
    - The MovieLens dataset (movies.csv and ratings.csv) is correctly formatted and does not contain corrupted rows.
    - Each `movieId` in `ratings.csv` corresponds to an existing record in `movies.csv`.
