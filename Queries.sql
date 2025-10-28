@@ -23,7 +23,7 @@ ORDER BY Average_Rating DESC
 LIMIT 5;
 
 
--- 3️. Who is the director with the most movies in this dataset?
+-- 3. Who is the director with the most movies in this dataset?
 SELECT 
     director,
     COUNT(*) AS Movie_Count
@@ -43,3 +43,4 @@ JOIN ratings r ON m.movieId = r.movieId
 WHERE year IS NOT NULL
 GROUP BY year
 ORDER BY year ASC;
+
