@@ -5,7 +5,7 @@ Local CSV files (MovieLens dataset) – containing basic movie and rating inform
 External API (OMDb API) – providing enriched movie metadata such as Director, Plot, Box Office, and IMDb Rating.
 Once the data is processed, it is stored in a SQLite database and analyzed through SQL queries to extract meaningful insights such as top-rated movies, most popular genres, and director statistics.
 
-#⚙️ Technologies Used
+⚙️ Technologies Used
 Component       	Tool / Library
 Language        	Python 3.x
 Database        	SQLite
@@ -41,7 +41,7 @@ IMDb rating
 
 You can register and get a free API key from OMDb API Key Registration
 .
-#⚙️ Environment Setup
+⚙️ Environment Setup
 
 1. Create and Activate a Virtual Environment
 cd D:\Movies_data_pipeline_project
@@ -71,7 +71,7 @@ Run the schema setup script in your SQLite environment or directly through VS Co
 
 This creates the necessary tables for movies, ratings, and additional details.
 
-#🧱 Database Design
+🧱 Database Design
 Database Used: SQLite
 SQLite is chosen for its simplicity and ease of setup for local projects.
 Schema Overview
